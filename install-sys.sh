@@ -54,13 +54,19 @@ echo "installing pycharms"
 
 #sudo snap install pycharm-community --classic
 
-wget https://download.jetbrains.com/python/pycharm-community-2018.1.2.tar.gz -O /tmp/pycharm-community-2018.1.2.tar.gz
-tar xvzf pycharm-community*.tar.gz -C /tmp/
-sudo su -c "chown -R root:root /tmp/pycharm*"
-sudo mkdir /opt/pycharm-community
-sudo mv /tmp/pycharm-community* /opt/pycharm-community
-sudo su -c "ln -s /opt/pycharm-community/bin/pycharm.sh /usr/local/bin/pycharm"
-sudo su -c "ln -s /opt/pycharm-community/bin/inspect.sh /usr/local/bin/inspect"
+#wget https://download.jetbrains.com/python/pycharm-community-2018.1.2.tar.gz -O /tmp/pycharm-community-2018.1.2.tar.gz
+#tar xvzf pycharm-community*.tar.gz -C /tmp/
+#sudo su -c "chown -R root:root /tmp/pycharm*"
+#sudo mkdir /opt/pycharm-community
+#sudo mv /tmp/pycharm-community* /opt/pycharm-community
+#sudo su -c "ln -s /opt/pycharm-community/bin/pycharm.sh /usr/local/bin/pycharm"
+#sudo su -c "ln -s /opt/pycharm-community/bin/inspect.sh /usr/local/bin/inspect"
+
+#install Pycharm via ppa
+echo "installing pycharm-community via ppa"
+sudo add-apt-repository -y ppa:jonas-groeger/jetbrains
+sudo apt update
+sudo apt install -y pycharm-community
 
 echo "#####*****installation finished for all packages*****#####"
 
